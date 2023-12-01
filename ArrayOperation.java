@@ -2,7 +2,7 @@ package com.basicConcept;
 import java.util.*;
 public class ArrayOperation 
 {
-	public static int size,i,j,temp,num[];
+	public static int size,i,j,temp,num[],min,max;
 	public static void Accept() // Function definition
 	{
 		System.out.println("Accepting Array values\n");
@@ -20,7 +20,6 @@ public class ArrayOperation
 	{
 		Accept();
 		System.out.println("Minimum from Arrray");
-		int min;
 		min=num[0];
 		for(i=0;i<size;i++)
 		{
@@ -35,7 +34,6 @@ public class ArrayOperation
 	{
 		Accept();
 		System.out.println("Maximum from Arrray\n");
-		int max;
 		max=num[0];
 		for(i=0;i<size;i++)
 		{
