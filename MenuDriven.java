@@ -32,6 +32,12 @@ public class MenuDriven {
 				num=input.nextInt();
 				fibonacci(num);
 				break;
+
+			case 4:
+				return choice;
+				
+			default:
+				System.out.println("Enter valid choice only");
 		}
 		return choice;
 	}
