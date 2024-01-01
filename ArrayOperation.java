@@ -1,4 +1,4 @@
-package com.basicConcept;
+package Anudip_Daily_Programs;
 import java.util.*;
 public class ArrayOperation 
 {

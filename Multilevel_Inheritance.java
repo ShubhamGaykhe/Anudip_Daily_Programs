@@ -1,4 +1,4 @@
-package Inheritance;
+package Anudip_Daily_Programs;
 import java.util.*;
 class Bank	// parent class
 {
