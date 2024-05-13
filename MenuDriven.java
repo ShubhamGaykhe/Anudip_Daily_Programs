@@ -1,93 +1,151 @@
-package Anudip_Daily_Programs;
+package basicConcept;
 import java.util.*;
-public class MenuDriven {
-	public int accept()
+public class MenuDriven 
+{
+	public static void main(String[] args) 
 	{
-		int choice;
+		int choice ,num1,num2,answer;
+		boolean  result;
 		Scanner input=new Scanner(System.in);
-		System.out.println("\n>>>>>>>>>>> MENU <<<<<<<<<<<\n" // Display menu
-				+ "\n1) Sum of Digit\n"
-				+ "2) Prime Number\n"
-				+ "3) Fibonacci series\n"
-				+ "4) Exit\n"
+		System.out.println("!!!!! MENU !!!!!");
+		System.out.println("1) Arithmatic Operator\n"
+				+ "2) Logical Operator\n"
+				+ "3) Relational Operator\n"
+				+ "4) Bitwise Operator\n"
+				+ "5) Conditional Operator\n"
+				+ "6) Assignment Operator\n"
 				+ "Enter your choice=");
 		choice=input.nextInt();
 		switch(choice)
 		{
 			case 1:
-				int num;
-				System.out.print("Enter number=");
-				num=input.nextInt();
-				SumOfDigit(num);
+				//Performing arithmetic operation
+				
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				System.out.println("-*-*-*-* Arithmatic Operator -*-*-*-*");
+				System.out.println("******** ADDITION ********");
+				System.out.print("Addition="+(num1+num2)); //Addition
+				
+				System.out.println("\n******** SUBSTRACTION ********");
+				System.out.print("Substraction="+(num2-num1)); //Subtraction
+				
+				System.out.println("\n******** MULTIPLICATION ********");
+				System.out.print("Multiplication="+(num2*num1)); //Multiplication
+				 
+				System.out.println("\n******** DIVISIION ********");
+				System.out.print("Division="+(num2/num1)); // Division
 				break;
 				
 			case 2:
-				System.out.print("Enter number=");
-				num=input.nextInt();
-				Prime(num);
-				break;
+				// Performing logical operation
+				
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				System.out.println("num1="+num1+"\nnum2="+num2);
+				
+				//logical and(&)
+				result=(num1>num2)&&(num1<num2);
+				System.out.println("Result of (num1>num2)&&(num1<num2)="+result);
+				
+				result=(num1<num2)&&(num1<=num2);
+				System.out.println("Result of (num1<num2)&&(num1<=num2)="+result);
+				
+				//logical or(|)
+				result=(num1>num2)||(num1<=num2);
+				System.out.println("Result of (num1>num2)||(num1<=num2)="+result);
+				
+				result=(num1<num2)||(num1<=num2);
+				System.out.println("Result of (num1<num2)||(num1<=num2)="+result);
+				
+				//logical not(!)
+				result=!((num1<num2)||(num1<=num2));
+				System.out.println("Result of !((num1<num2)||(num1<=num2))="+result);
+			break;
 				
 			case 3:
-				System.out.print("Enter lenght of series=");
-				num=input.nextInt();
-				fibonacci(num);
-				break;
-
-			case 4:
-				return choice;
+				//Performing relational operation
 				
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				System.out.println("\n\n-*-*-*-* Relational Operator -*-*-*-*");
+				
+				System.out.println("num1="+num1+"\nnum2="+num2);
+				
+				System.out.println("Result of (num1>num2)="+(num1>num2));
+				
+				System.out.println("Result of (num1>=num2)="+(num1>=num2));
+				
+				System.out.println("Result of (num1<num2)="+(num1<num2));
+				
+				System.out.println("Result of (num1!=num2)="+(num1!=num2));
+				break;
+				
+			case 4:
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				//Bitwise & 
+				answer=num1 & num2;
+				System.out.println("Answer of num1 & num2="+answer);
+				
+				//Bitwise | 
+				answer=num1 | num2;
+				System.out.println("Answer of num1 | num2="+answer);
+				
+				//Bitwise & 
+				answer=num1 ^ num2;
+				System.out.println("Answer of num1 ^ num2="+answer);
+				break;
+				
+			case 5:
+				// performing conditional operator
+				
+				System.out.println("\n\n-*-*-*-* Conditional Opeartor -*-*-*-*");
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				answer=num1>num2 ? num1:num2;
+				System.out.println(answer+" is gretest number");
+				
+				break;
+					
+			case 6:
+				//Performing assignment operation
+				
+				System.out.println("Enter two number=");
+				num1=input.nextInt();
+				num2=input.nextInt();
+				// Accepting input
+				
+				System.out.println("\n\n-*-*-*-* Assignment Opeartor -*-*-*-*");
+				System.out.print("'num1' is assign with 10 value");
+				num1+=20;
+				System.out.print("\n'num1' is add with 20 and again assign to 'num1'"
+						+ " the value="+num1);
+				
+				System.out.print("\n'num2' is assign with value");
+				num2*=2;
+				System.out.print("\n'num2' is multiply with 2 and again assign to 'num2'"
+						+ " the value="+num2);
+				break;
+			
 			default:
 				System.out.println("Enter valid choice only");
+			input.close();
 		}
-		return choice;
-	}
-	public void SumOfDigit(int num)  // Sum of digit function
-	{
-		int sum=0,lastDigit;
-		while(num!=0)
-		{
-			lastDigit=num%10;
-			sum+=lastDigit;
-			num/=10;
-		}
-		System.out.println("Sum of digit="+sum);
-	}
-	public void Prime(int num) // Prime number function
-	{
-		int i;
-		boolean flag=true;
-		for(i=2;i<num;i++)
-		{
-			if(num%i==0)
-			{
-				flag=false;
-				break;
-			}
-		}
-		if(flag)
-			System.out.println("Number is prime");
-		else
-			System.out.println("Number is not prime");
-	}
-	public void fibonacci(int num) // Fibonacci series function
-	{
-		int first=0,second=1,next,i;
-		System.out.print(first+" "+second+" ");
-		for(i=2;i<num;i++)
-		{
-			next=first+second;
-			first=second;
-			second=next;
-			System.out.print(next+" ");
-		}
-	}
-	public static void main(String[] args) 
-	{
-		MenuDriven obj=new MenuDriven(); // Object creation
-		int value;
-		do
-		{
-			value=obj.accept();
-		}while(value!=4);
 	}
 }
